@@ -1,5 +1,5 @@
 require('../test_helper.js');
-var convert = require('../num_converter.js');
+var convert = require('../lib/num_converter.js');
 
 QUnit.test('convert', function() {
   QUnit.expect(65536*2 + 1);

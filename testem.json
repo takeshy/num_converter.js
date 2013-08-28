@@ -2,7 +2,7 @@
   "framework": "mocha",
     "src_files": [
       "node_modules/expect.js/expect.js",
-      "num_converter.js",
+      "./lib/num_converter.js",
       "test/num_converter_test.js"
     ]
 }

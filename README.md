@@ -9,7 +9,7 @@ convert array of number to printable string and vice versa
 
 ```node.js
 
-    convert = require('./num_converter');
+    convert = require('./lib/num_converter');
     //str is "ds}B"
     var str = convert.numToStr(100000);
     //100000
@@ -25,7 +25,7 @@ convert array of number to printable string and vice versa
 
 ```html
 
-    <script src="num_converter.js"></script>
+    <script src="/js/num_converter.js"></script>
     <script>
     //str is "ds}B"
     var str = NumConverter.numToStr(100000);
