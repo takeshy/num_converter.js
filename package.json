@@ -1,7 +1,8 @@
 {
-  "name": "converter.js",
+  "name": "num_converter.js",
   "version": "0.0.1",
   "private": false,
+  "main" : "./lib/num_converter",
   "dependencies": {
     "testem": "*",
     "expect.js": "*",
