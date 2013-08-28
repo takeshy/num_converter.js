@@ -1,0 +1,12 @@
+{
+  "name": "converter.js",
+  "version": "0.0.1",
+  "private": false,
+  "dependencies": {
+    "testem": "*",
+    "expect.js": "*",
+    "mocha": "1.9",
+    "qunitjs": "1.10.0",
+    "qunit-tap": "1.3.0"
+  }
+}
