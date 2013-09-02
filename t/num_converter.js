@@ -1,13 +1,13 @@
 require('../test_helper.js');
 var convert = require('../lib/num_converter.js');
 
-QUnit.test('convert', function() {
-  QUnit.expect(65536*2 + 1);
-  for(var i=-65536;i<=65536;i++){
-    var ret = convert.numToStr(i);
-    QUnit.equal(convert.strToNum(ret),i);
-  }
-});
+//QUnit.test('convert', function() {
+//  QUnit.expect(65536*2 + 1);
+//  for(var i=-65536;i<=65536;i++){
+//    var ret = convert.numToStr(i);
+//    QUnit.equal(convert.strToNum(ret),i);
+//  }
+//});
 
 QUnit.test('convert Array', function() {
   QUnit.expect(2);
