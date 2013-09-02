@@ -9,6 +9,13 @@ var convert = require('../lib/num_converter.js');
 //  }
 //});
 
+QUnit.test('sortedNumArray', function() {
+  QUnit.expect(1);
+  var val = [0,20,21,23,25,27];
+  var ret = convert.sortedNumSetToCompress(val);
+  QUnit.deepEqual(convert.sortedNumSetToDecompress(ret),val);
+});
+
 QUnit.test('convert Array', function() {
   QUnit.expect(2);
   var plus = [];
