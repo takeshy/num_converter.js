@@ -23,21 +23,15 @@ QUnit.test('convert Array', function() {
   QUnit.deepEqual(convert.strToNumArray(minusStr),minus);
 });
 
-QUnit.test('inflate deflate', function() {
+QUnit.test('continuous same', function() {
   QUnit.expect(1);
   var val = [];
-  var rep = []
-  for(var i=0;i<=300;i++){
-    rep.push(9900+Math.floor( Math.random() * 300));
+  var rep = [32,0,-32];
+  for(var i=0;i<=10000;i++){
+    val.push( rep[Math.floor( Math.random() * 3)]);
   }
-  for(var i=0;i<=1000;i++){
-    val.push( rep[Math.floor( Math.random() * 300)]);
-  }
-  var ret = convert.deflateNumArrayToStr(val);
-  var ret2 = convert.numArrayToStr(val);
-  console.log(ret.length);
-  console.log(ret2.length);
-  QUnit.deepEqual(convert.inflateNumArrayFromStr(ret),val);
+  var ret = convert.numArrayToStr(val);
+  QUnit.deepEqual(convert.strToNumArray(ret),val);
 });
 
 QUnit.start();
