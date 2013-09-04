@@ -27,16 +27,16 @@ QUnit.test('inflate deflate', function() {
   QUnit.expect(1);
   var val = [];
   var rep = []
-  for(var i=0;i<=100;i++){
-    rep.push(Math.floor( Math.random() * 1000));
+  for(var i=0;i<=300;i++){
+    rep.push(9900+Math.floor( Math.random() * 300));
   }
-  for(var i=0;i<=400;i++){
-    val.push( rep[Math.floor( Math.random() * 99)]);
+  for(var i=0;i<=1000;i++){
+    val.push( rep[Math.floor( Math.random() * 300)]);
   }
   var ret = convert.deflateNumArrayToStr(val);
-  //var ret2 = convert.numArrayToStr(val);
-  //console.log(ret.length);
-  //console.log(ret2.length);
+  var ret2 = convert.numArrayToStr(val);
+  console.log(ret.length);
+  console.log(ret2.length);
   QUnit.deepEqual(convert.inflateNumArrayFromStr(ret),val);
 });
 
