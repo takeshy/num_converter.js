@@ -23,12 +23,9 @@ QUnit.test('convert Array', function() {
   QUnit.deepEqual(convert.strToNumArray(minusStr),minus);
 });
 
-QUnit.test('continuous', function() {
+QUnit.test('tick', function() {
   QUnit.expect(1);
-  var val = [];
-  for(var i=-100;i<=100;i++){
-    val.push(i);
-  }
+  var val = [ 13128, 13127, 13127, 13126, 13125, 13127, 13127, 13127 ]
   var ret = convert.numArrayToStr(val);
   QUnit.deepEqual(convert.strToNumArray(ret),val);
 });
