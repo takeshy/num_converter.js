@@ -53,4 +53,73 @@ QUnit.test('repeat', function() {
   QUnit.deepEqual(convert.strToNumArray(ret3),val3);
 });
 
+QUnit.test('simplePop', function() {
+  QUnit.expect(3);
+  var val = [1]
+  var val2 = [102422,-243322]
+  var val3 = [-32,344]
+  var ret = convert.simpleNumArrayToStr(val);
+  var ret2 = convert.simpleNumArrayToStr(val2);
+  var ret3 = convert.simpleNumArrayToStr(val3);
+  ret = convert.simplePop(ret);
+  ret2 = convert.simplePop(ret2);
+  ret3 = convert.simplePop(ret3);
+  QUnit.deepEqual(convert.strToSimpleNumArray(ret),val.slice(0,val.length - 1));
+  QUnit.deepEqual(convert.strToSimpleNumArray(ret2),val2.slice(0,val2.length - 1));
+  QUnit.deepEqual(convert.strToSimpleNumArray(ret3),val3.slice(0,val3.length - 1));
+});
+
+QUnit.test('simpleShift', function(){
+  QUnit.expect(3);
+  var val = [1]
+  var val2 = [102422,-243322]
+  var val3 = [-32,344]
+  var ret = convert.simpleNumArrayToStr(val);
+  var ret2 = convert.simpleNumArrayToStr(val2);
+  var ret3 = convert.simpleNumArrayToStr(val3);
+  ret = convert.simpleShift(ret);
+  ret2 = convert.simpleShift(ret2);
+  ret3 = convert.simpleShift(ret3);
+  QUnit.deepEqual(convert.strToSimpleNumArray(ret),val.slice(1));
+  QUnit.deepEqual(convert.strToSimpleNumArray(ret2),val2.slice(1));
+  QUnit.deepEqual(convert.strToSimpleNumArray(ret3),val3.slice(1));
+});
+
+QUnit.test('first', function() {
+  QUnit.expect(3);
+  var val = [1]
+  var val2 = [102422,-243322]
+  var val3 = [-32,344]
+  var ret = convert.simpleNumArrayToStr(val);
+  var ret2 = convert.simpleNumArrayToStr(val2);
+  var ret3 = convert.simpleNumArrayToStr(val3);
+  QUnit.equal(convert.first(ret),1);
+  QUnit.equal(convert.first(ret2),102422)
+  QUnit.equal(convert.first(ret3),-32);
+});
+
+QUnit.test('last', function() {
+  QUnit.expect(3);
+  var val = [1]
+  var val2 = [102422,-243322]
+  var val3 = [-32,344]
+  var ret = convert.simpleNumArrayToStr(val);
+  var ret2 = convert.simpleNumArrayToStr(val2);
+  var ret3 = convert.simpleNumArrayToStr(val3);
+  QUnit.equal(convert.last(ret),1);
+  QUnit.equal(convert.last(ret2),-243322);
+  QUnit.equal(convert.last(ret3),344);
+});
+
+QUnit.test('at', function() {
+  QUnit.expect(6);
+  var val = convert.simpleNumArrayToStr([102422,-243322]);
+  QUnit.equal(convert.at(val,0),102422);
+  QUnit.equal(convert.at(val,1),-243322);
+  QUnit.equal(convert.at(val,2),null);
+  QUnit.equal(convert.at(val,-1),-243322);
+  QUnit.equal(convert.at(val,-2),102422);
+  QUnit.equal(convert.at(val,-3),null);
+});
+
 QUnit.start();
