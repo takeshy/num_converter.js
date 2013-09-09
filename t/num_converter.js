@@ -154,7 +154,7 @@ QUnit.test('pop', function() {
 });
 
 QUnit.test('shift', function() {
-  QUnit.expect(11);
+  QUnit.expect(17);
   var val = [-32];
   var val2 = [-32,0];
   var val3 = [0,0,1000];
@@ -166,6 +166,12 @@ QUnit.test('shift', function() {
   var val9 = [1,2,3];
   var val10 = [1,2,3,4];
   var val11 = [1,2,3,4,5];
+  var val12 = [-32,-32,-32,-32];
+  var val13 = [-32,-64,-96];
+  var val14 = [-32,-64,-96,-128];
+  var val15 = [320,288,288,288];
+  var val16 = [320,288,256,224];
+  var val17 = [320,288,256,224,192];
 
   var ret = convert.numArrayToStr(val);
   var ret2 = convert.numArrayToStr(val2);
@@ -178,6 +184,12 @@ QUnit.test('shift', function() {
   var ret9 = convert.numArrayToStr(val9);
   var ret10 = convert.numArrayToStr(val10);
   var ret11 = convert.numArrayToStr(val11);
+  var ret12 = convert.numArrayToStr(val12);
+  var ret13 = convert.numArrayToStr(val13);
+  var ret14 = convert.numArrayToStr(val14);
+  var ret15 = convert.numArrayToStr(val15);
+  var ret16 = convert.numArrayToStr(val16);
+  var ret17 = convert.numArrayToStr(val17);
 
   ret = convert.shift(ret);
   ret2 = convert.shift(ret2);
@@ -190,6 +202,12 @@ QUnit.test('shift', function() {
   ret9 = convert.shift(ret9);
   ret10 = convert.shift(ret10);
   ret11 = convert.shift(ret11);
+  ret12 = convert.shift(ret12);
+  ret13 = convert.shift(ret13);
+  ret14 = convert.shift(ret14);
+  ret15 = convert.shift(ret15);
+  ret16 = convert.shift(ret16);
+  ret17 = convert.shift(ret17);
 
   QUnit.deepEqual(convert.strToNumArray(ret),[]);
   QUnit.deepEqual(convert.strToNumArray(ret2),[0]);
@@ -201,7 +219,13 @@ QUnit.test('shift', function() {
   QUnit.deepEqual(convert.strToNumArray(ret8),[1,1,1]);
   QUnit.deepEqual(convert.strToNumArray(ret9),[2,3]);
   QUnit.deepEqual(convert.strToNumArray(ret10),[2,3,4]);
-  QUnit.deepEqual(convert.strToNumArray(ret11),[2,3,4,5]);
+  QUnit.deepEqual(convert.strToNumArray(ret11),val11.slice(1));
+  QUnit.deepEqual(convert.strToNumArray(ret12),val12.slice(1));
+  QUnit.deepEqual(convert.strToNumArray(ret13),val13.slice(1));
+  QUnit.deepEqual(convert.strToNumArray(ret14),val14.slice(1));
+  QUnit.deepEqual(convert.strToNumArray(ret15),val15.slice(1));
+  QUnit.deepEqual(convert.strToNumArray(ret16),val16.slice(1));
+  QUnit.deepEqual(convert.strToNumArray(ret17),val17.slice(1));
 });
 QUnit.test('modifyLast', function() {
   QUnit.expect(12);
