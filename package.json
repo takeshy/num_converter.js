@@ -5,7 +5,7 @@
   "main" : "./lib/num_converter",
   "dependencies": {
     "testem": "*",
-    "expect.js": "*",
+    "expect.js": "0.2.0",
     "mocha": "1.9",
     "qunitjs": "1.10.0",
     "qunit-tap": "1.3.0"
