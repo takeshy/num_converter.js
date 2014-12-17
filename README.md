@@ -42,3 +42,6 @@ convert array of number to printable string and vice versa
     </script>
 
 ```
+
+version 0.2
+fix bug  if  -32 continues three times, data is broken after pop()

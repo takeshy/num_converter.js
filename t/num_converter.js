@@ -281,5 +281,34 @@ QUnit.test('modifyLast', function() {
   QUnit.deepEqual(convert.strToNumArray(ret12),[998,999,1000,1001,1001]);
 });
 
+QUnit.test('pop ', function() {
+  QUnit.expect(1);
+  var orig = [-31,-62,-93];
+  var arrStr = convert.numArrayToStr(orig);
+  var arrStr = convert.pop(arrStr)
+  var a = convert.push(arrStr,-31)
+  QUnit.deepEqual(convert.strToNumArray(a),orig);
+});
+
+QUnit.test('pop ', function() {
+  QUnit.expect(1);
+  var orig = [32*4+1,32*4,32*3,32*2,32];
+  var arrStr = convert.numArrayToStr(orig);
+  var a = convert.pop(arrStr)
+  orig.pop()
+  QUnit.deepEqual(convert.strToNumArray(a),orig);
+});
+
+QUnit.test('modifyLast repeat -32 ', function() {
+  QUnit.expect(1);
+  var answer = [11730,11733,11701,11669,11642]
+  var arrStr = convert.numArrayToStr([11730])
+  arrStr = convert.push(arrStr,3)
+  arrStr = convert.push(arrStr,-32)
+  arrStr = convert.push(arrStr,-32)
+  arrStr = convert.push(arrStr,-32)
+  arrStr = convert.modifyLast(arrStr,5)
+  QUnit.deepEqual(convert.strToNumArray(arrStr),answer);
+});
 
 QUnit.start();
